@@ -1,13 +1,10 @@
 package com.example.jai.popmov;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -35,8 +32,6 @@ public class HomeActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        sort();
-
         //populate recyclerview with dummy strings
         /*for (int i=0; i<=9;i++)
         {
@@ -47,6 +42,8 @@ public class HomeActivity extends AppCompatActivity {
         rva = new RecyclerViewAdapter(this,items,multipleMovies);
         rv.setLayoutManager(new GridLayoutManager(this,2));
         rv.setAdapter(rva);
+
+        sort();
     }
 
     private void sort() {
@@ -60,7 +57,8 @@ public class HomeActivity extends AppCompatActivity {
     private void displayMovies(String [] imageURLs, JSONArray temp) {
         //we'll display data here
         rva = new RecyclerViewAdapter(this,imageURLs,multipleMovies);
-        rva.notifyDataSetChanged();
+        rv.swapAdapter(rva, true);
+        // rva.notifyDataSetChanged();
         System.out.println(imageURLs[0]);
         //rv.setAdapter(rva);
     }
