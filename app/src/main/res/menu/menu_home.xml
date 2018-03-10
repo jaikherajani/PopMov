@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.jai.popmov.HomeActivity">
+    <item
+        android:id="@+id/action_popular"
+        android:orderInCategory="100"
+        android:title="@string/action_popular"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_ratings"
+        android:orderInCategory="100"
+        android:title="@string/action_ratings"
+        app:showAsAction="never" />
+</menu>
